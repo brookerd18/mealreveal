@@ -1,0 +1,90 @@
+<html>
+<script src="jquery-1.11.3.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+<script src="ezslots.js"></script>
+<link href="ezslots.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<body>
+    <header>
+
+        <div class="grid-nav">
+            <div class="logo-container">
+                <img src="../spinner/assets/Logo-2.png" alt="logo" class="logo" height="250" width="300">
+            </div>
+
+    </header>
+
+    <div class="grid-nav2">
+        <div class="slots-container" id="ezslots3">
+        </div>
+        <div class="gogogo3">
+            <button id="gogogo3">spin</button>
+            <!-- </div>
+        <div style="text-align: center;" class="results">
+            <button>See Your Results</button>
+        </div> -->
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script src="ezslots.js" :></script>
+
+
+            <script>
+
+                $(function () {
+                    //setting up some sample set sof things we can make a slot machine of
+                    var numbers = ['Chicken', 'Beef', 'Fish', 'Pork',];
+                    var images = ['Lunch', 'Dinner', 'Side'];
+                    var misc = ['Mexican', 'Southwestern', 'Italian', 'French', 'American', 'Asian', 'Indian', 'Chinese', 'Thai', 'Vietnamese', 'Tex-Mex', 'Latin American'];
+                    var callbackFunction = function (result) {
+                        var protein = numbers[result[0]]
+                        var protein_lower = protein.toLocaleLowerCase()
+                        var meal = images[result[1]]
+                        var meal_lower = meal.toLocaleLowerCase()
+                        var cuisine = misc[result[2]]
+                        var cuisine_lower = cuisine.toLocaleLowerCase()
+                        // https://www.epicurious.com/search/?meal=buffet&ingredient=pork&cuisine=tex-mex
+                        // https://www.epicurious.com/search?cuisine=tex-mex&ingredient=pork&type=buffet
+                        // https://www.epicurious.com/search/?ingredient=pork&type=buffet&cuisine=tex-mex
+
+
+                        const el = document.createElement('div')
+                        console.log("test", el)
+                        const aTag = document.createElement("a")
+                        aTag.setAttribute('href', `https://www.epicurious.com/search/?ingredient=${protein_lower}&meal=${meal_lower}&cuisine=${cuisine_lower}`);
+                        aTag.innerText = "Reveal Your Meal";
+                        console.log(aTag)
+                        el.appendChild(aTag)
+                        document.body.appendChild(el)
+                        swal({
+                            // title: "results",
+                            content: el,
+                        })
+                        console.log("results", el)
+
+                        // swal("https://www.epicurious.com/search/?ingredient=" + protein_lower + "&meal=" + meal_lower + "&cuisine=" + cuisine_lower);
+                    }
+
+                    //mixed types for each reel
+                    var ezslot3 = new EZSlots("ezslots3", { "reelCount": 3, "winningSet": [0, 0, 0], "symbols": [numbers, images, misc], "height": 126, "width": 200, "callback": callbackFunction, });
+                    $("#gogogo0").click(function () { console.log(ezslot0.spin()); });
+                    $("#gogogo1").click(function () { console.log(ezslot1.spin()); });
+                    $("#winwinwin1").click(function () { console.log(ezslot1.win()) });
+                    $("#gogogo2").click(function () { console.log(ezslot2.spin()); });
+                    $("#winwinwin2").click(function () { console.log(ezslot2.win()) });
+                    $("#gogogo3").click(function () { console.log(ezslot3.spin()); });
+                    $("#winwinwin3").click(function () { console.log(ezslot3.win()) });
+                    $("#gogogo4").click(function () { console.log(ezslot4.spin()); });
+                    $("#winwinwin4").click(function () { console.log(ezslot4.win()) });
+
+                });
+
+            </script>
+        </div>
+    </div>
+
+
+
+    </div>
+</body>
+
+</html>
