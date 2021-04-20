@@ -100,4 +100,5 @@ function EZSlots(id, useroptions) {
         });
 
 
+
 }

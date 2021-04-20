@@ -1,9 +1,16 @@
 <html>
-<script src="jquery-1.11.3.js"></script>
-<script src="jquery.easing.1.3.js"></script>
-<script src="ezslots.js"></script>
-<link href="ezslots.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<head>
+    <script src="jquery-1.11.3.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
+    <script src="ezslots.js"></script>
+    <link href="ezslots.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&family=Zilla+Slab:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
 
 <body>
     <header>
@@ -12,20 +19,19 @@
             <div class="logo-container">
                 <img src="../spinner/assets/Logo-2.png" alt="logo" class="logo" height="250" width="300">
             </div>
-
     </header>
 
     <div class="grid-nav2">
         <div class="slots-container" id="ezslots3">
         </div>
+
         <div class="gogogo3">
-            <button id="gogogo3">spin</button>
-            <!-- </div>
-        <div style="text-align: center;" class="results">
-            <button>See Your Results</button>
-        </div> -->
+            <button type="button" id="gogogo3" class="btn btn-outline-dark btn-lg">spin</button>
+            <!-- <button id="gogogo3">spin</button> -->
+
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script src="ezslots.js" :></script>
+
 
 
             <script>
@@ -34,7 +40,7 @@
                     //setting up some sample set sof things we can make a slot machine of
                     var numbers = ['Chicken', 'Beef', 'Fish', 'Pork',];
                     var images = ['Lunch', 'Dinner', 'Side'];
-                    var misc = ['Mexican', 'Southwestern', 'Italian', 'French', 'American', 'Asian', 'Indian', 'Chinese', 'Thai', 'Vietnamese', 'Tex-Mex', 'Latin American'];
+                    var misc = ['Mexican', 'Italian', 'French', 'American', 'Asian', 'Indian', 'Chinese', 'Thai', 'Vietnamese', 'Tex-Mex', 'Latin American'];
                     var callbackFunction = function (result) {
                         var protein = numbers[result[0]]
                         var protein_lower = protein.toLocaleLowerCase()
@@ -42,27 +48,26 @@
                         var meal_lower = meal.toLocaleLowerCase()
                         var cuisine = misc[result[2]]
                         var cuisine_lower = cuisine.toLocaleLowerCase()
-                        // https://www.epicurious.com/search/?meal=buffet&ingredient=pork&cuisine=tex-mex
-                        // https://www.epicurious.com/search?cuisine=tex-mex&ingredient=pork&type=buffet
-                        // https://www.epicurious.com/search/?ingredient=pork&type=buffet&cuisine=tex-mex
-
 
                         const el = document.createElement('div')
                         console.log("test", el)
                         const aTag = document.createElement("a")
                         aTag.setAttribute('href', `https://www.epicurious.com/search/?ingredient=${protein_lower}&meal=${meal_lower}&cuisine=${cuisine_lower}`);
+                        aTag.setAttribute('target', '_blank')
+                        aTag.setAttribute('class', 'xander')
                         aTag.innerText = "Reveal Your Meal";
                         console.log(aTag)
                         el.appendChild(aTag)
                         document.body.appendChild(el)
                         swal({
-                            // title: "results",
-                            content: el,
+                            content: el
+
                         })
                         console.log("results", el)
 
-                        // swal("https://www.epicurious.com/search/?ingredient=" + protein_lower + "&meal=" + meal_lower + "&cuisine=" + cuisine_lower);
+
                     }
+
 
                     //mixed types for each reel
                     var ezslot3 = new EZSlots("ezslots3", { "reelCount": 3, "winningSet": [0, 0, 0], "symbols": [numbers, images, misc], "height": 126, "width": 200, "callback": callbackFunction, });
@@ -82,9 +87,10 @@
         </div>
     </div>
 
-
-
     </div>
+
 </body>
+
+
 
 </html>
