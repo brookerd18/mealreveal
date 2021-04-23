@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="../mealreveal/assets/Logo-2.png" type="image/x-icon">
 </head>
 
 
@@ -21,16 +22,18 @@
             </div>
     </header>
 
+
     <div class="grid-nav2">
         <div class="slots-container" id="ezslots3">
         </div>
 
         <div class="gogogo3">
-            <button type="button" id="gogogo3" class="btn btn-outline-dark btn-lg">spin</button>
+            <button type="button" id="gogogo3" class="btn btn-outline-dark btn-lg">SPIN</button>
             <!-- <button id="gogogo3">spin</button> -->
 
+
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script src="ezslots.js" :></script>
+            <script src="ezslots.js"></script>
 
 
 
@@ -40,7 +43,7 @@
                     //setting up some sample set sof things we can make a slot machine of
                     var numbers = ['Chicken', 'Beef', 'Fish', 'Pork',];
                     var images = ['Lunch', 'Dinner', 'Side'];
-                    var misc = ['Mexican', 'Italian', 'French', 'American', 'Asian', 'Indian', 'Chinese', 'Thai', 'Vietnamese', 'Tex-Mex', 'Latin American'];
+                    var misc = ['Mexican', 'Italian', 'French', 'American', 'Asian', 'Indian', 'Chinese', 'Thai', 'Vietnamese', 'Tex-Mex'];
                     var callbackFunction = function (result) {
                         var protein = numbers[result[0]]
                         var protein_lower = protein.toLocaleLowerCase()
@@ -49,25 +52,49 @@
                         var cuisine = misc[result[2]]
                         var cuisine_lower = cuisine.toLocaleLowerCase()
 
-                        const el = document.createElement('div')
-                        console.log("test", el)
-                        const aTag = document.createElement("a")
-                        aTag.setAttribute('href', `https://www.epicurious.com/search/?ingredient=${protein_lower}&meal=${meal_lower}&cuisine=${cuisine_lower}`);
-                        aTag.setAttribute('target', '_blank')
-                        aTag.setAttribute('class', 'xander')
-                        aTag.innerText = "Reveal Your Meal";
-                        console.log(aTag)
-                        el.appendChild(aTag)
-                        document.body.appendChild(el)
+                        // const el = document.createElement('div')
+                        // console.log("test", el)
+                        // const aTag = document.createElement("a")
+                        // aTag.setAttribute('href', `https://www.epicurious.com/search/?ingredient=${protein_lower}&meal=${meal_lower}&cuisine=${cuisine_lower}`);
+                        // aTag.setAttribute('target', '_blank')
+                        // aTag.setAttribute('class', 'xander')
+                        // aTag.innerText = "Reveal Your Meal";
+                        // console.log(aTag)
+                        // el.appendChild(aTag)
+                        // document.body.appendChild(el)
                         swal({
-                            content: el
+                            // content: el,
+                            buttons: {
+                                reveal: {
+                                    text: "Reveal Your Meal",
+                                    value: "reveal",
 
+                                },
+                                spin:
+                                {
+                                    text: "Spin Again",
+                                    value: "spin again"
+
+                                }
+                            }
                         })
-                        console.log("results", el)
+                            .then((value) => {
+                                switch (value) {
+                                    case "spin again":
+                                        ezslot3.spin();
+                                        break;
 
+                                    case "reveal":
+                                        window.open(`https://www.epicurious.com/search/?ingredient=${protein_lower}&meal=${meal_lower}&cuisine=${cuisine_lower}`, '_blank');
+                                        break;
+
+                                }
+                            });
+
+                        // console.log("results", el)
+                        // swal.setAttribute('class', 'jj')
 
                     }
-
 
                     //mixed types for each reel
                     var ezslot3 = new EZSlots("ezslots3", { "reelCount": 3, "winningSet": [0, 0, 0], "symbols": [numbers, images, misc], "height": 126, "width": 200, "callback": callbackFunction, });
@@ -85,12 +112,46 @@
 
             </script>
         </div>
+        <h5 class="quickmeals" style="font-size:x-large; font-family: 'Zilla Slab">Quick Meal Ideas</h5>
     </div>
+    <div class="grid-nav3">
 
-    </div>
+        <p>
+
+            <a href="https://www.epicurious.com/ingredients/how-to-cook-chicken-legs-drumsticks-for-dinner-recipes-gallery"
+                target=_blank>
+
+                <img src="../mealreveal/assets/chicken.jpg" alt="chicken width=" 100" height="100" class="chicken">
+
+            </a>
+
+            <a href="https://www.epicurious.com/recipes-menus/best-cookie-recipes-chocolate-chip-raisin-peanut-butter-gallery"
+                target=_blank>
+                <img src="../mealreveal/assets/cookies.png" alt="cookie" width="100" height="100" class="cookie">
+            </a>
+
+            <a href="https://www.epicurious.com/recipes-menus/easy-healthy-recipes-gallery" target=_blank>
+                <img src="../mealreveal/assets/healthy.png" alt="healthy" width="100" height="100" class="healthy">
+            </a>
+            <a href="https://www.epicurious.com/holidays-events/easy-halloween-appetizers-and-snack-recipes-gallery"
+                target=_blank>
+                <img src="../mealreveal/assets/snacks.jpg" alt="snacks" width="100" height="100" class="snacks">
+            </a>
+            <a href="https://www.epicurious.com/recipes-menus/best-salad-recipes-gallery" target=_blank>
+                <img src="../mealreveal/assets/salad.jpg" alt="salad" width="100" height="100" class="salad">
+            </a>
+            <a href="https://www.epicurious.com/recipes-menus/best-quick-vegetarian-dinner-recipes-gallery"
+                target=_blank>
+                <img src="../mealreveal/assets/quickvegetarian.png" alt="vegetarian" width="100" height="100"
+                    class="vegetarian">
+            </a>
+        </p>
+        <p>
+        <h5 class=chickentext style="font-size: large; font-family: 'Zilla Slab">Chicken Cookies Healthy
+            Snacks Salads Vegetarian</h5>
+        </p>
+
 
 </body>
-
-
 
 </html>

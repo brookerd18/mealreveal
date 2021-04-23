@@ -19,7 +19,6 @@ align-items: center;
       font-family:'Zilla Slab', serif;
       font-weight: bold;
 }
- 
 .grid-nav {
     display: grid;
     grid-template-rows: 1fr;
@@ -70,6 +69,7 @@ align-items: center;
     grid-row: 1;
     display: flex;
     justify-content: center;
+    
 }
 
 .gogogo3{
@@ -77,14 +77,9 @@ align-items: center;
     grid-row: 2;
     display: flex;
     justify-content: center;
-   
-  
 
 }
-.gogogo3:hover {
     
-    
-}
 body {
     background-color: white;
 }
@@ -102,9 +97,109 @@ body {
     display: flex;
     justify-content: center;
 }
+.grid-nav3 {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(90px, 90px) 1fr 1fr;
+    grid-template-areas: 'left center right';
+    height: 100px;
+    width: 100vw;
+    align-items:flex-start;
+}
 
 .xander {
     font-family:'Zilla Slab', serif;
-    font-size: larger;
+    font-size: smaller;
+    background-color: #F4CB4A;
 }
+ 
+.swal-modal {
+    margin-top: 250px;
+    background-color: white;
+    padding-right: 75px;
+}
+
+.swal-button { 
+    font-family:'Zilla Slab', serif;
+    background-color:white;
+    color: white;
+    border-width: medium;
+    border-style:double;
+    font-size: xx-large;
+    
+}
+
+.swal-button--spin {
+    font-family:'Zilla Slab', serif;
+    background-color: whitesmoke;
+    color: black;
+    border-width: medium;
+    border-style:double;
+    font-size: medium;
+    margin-right: 75px;
+}
+
+.swal-button--reveal {
+    font-family:'Zilla Slab', serif;
+    background-color: whitesmoke;
+    color: black;
+    border-width: medium;
+    border-style:double;
+    font-size: xx-large;
+}
+.cookie {
+    padding: 1px; 
+    margin-left: 15px;
+    border: 1px solid black;
+ 
+       
+    }
+.salad {
+    padding: 1px; 
+    margin-left: 13px;
+    border: 1px solid black;
+       
+    }
+ .snacks {
+    padding: 1px; 
+    margin-left: 15px;
+    border: 1px solid black;
+           
+        }
+.chicken {
+    padding: 1px; 
+    margin-left: 100px;
+    border: 1px solid black;
+    } 
+.healthy {
+    padding: 1px; 
+    margin-left: 15px;
+    border: 1px solid black;
+       
+    }
+.vegetarian{
+    padding: 1px; 
+    margin-left: 15px;
+    border: 1px solid black;
+       
+    } 
+.quickmeals {
+    grid-column: 1/1;
+    grid-row: 3;
+    display: flex;
+    justify-content: left;
+    padding-left: 100px;
+    padding-top: 65px;
+    }
+
+.chickentext {
+    grid-column: 1/1;
+    grid-row: 2;
+    display: flex;
+    justify-content: left;
+    padding-left: 115px;
+    padding-top: 15px;
+    word-spacing: 56px;
+}
+
  
